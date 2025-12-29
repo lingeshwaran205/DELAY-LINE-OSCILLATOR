@@ -1,143 +1,145 @@
 # DELAY-LINE-OSCILLATOR
-Application-oriented CMOS ring oscillator for on-chip clock generation and timing characterization. Designed to evaluate inverter delay, oscillation frequency, and process variations in VLSI systems. Validated through circuit-level simulation for reliable timing analysis.<br>
+
+Application-oriented **CMOS ring oscillator** designed for on-chip clock generation and precise delay characterization.  
+The oscillator is used as a fundamental timing element to study inverter delay, oscillation behavior, and sensitivity to environmental and process variations in VLSI systems.  
+Validated through circuit-level simulations for accurate frequency and delay analysis.<br>
 
 </br>
 
-## 100 MHz CMOS Ring Oscillator for Adaptive Timing Failure Prediction
+## 100 MHz CMOS Ring Oscillator for Delay Characterization
+
+<img width="689" height="643" alt="Screenshot from 2025-10-25 15-14-24" src="https://github.com/user-attachments/assets/de873b73-7cac-4330-88a9-0d74948b4d24" />  <br>
+
+</br> 
+
+<img width="860" height="709" alt="Screenshot from 2025-10-25 15-15-52" src="https://github.com/user-attachments/assets/c6b64d28-d33a-471b-95c0-b07ca51e795c" />
+
+
+
+---
 
 ## 📌 Overview
-This project presents the design and application of a **100 MHz CMOS ring oscillator** used as a **real-time delay sensor** for predicting timing failures and enabling **adaptive voltage and frequency scaling (DVFS)** in high-speed System-on-Chip (SoC) designs.
+This project focuses on the **design, analysis, and validation of a 100 MHz CMOS ring oscillator** implemented using cascaded inverter stages.
 
-Unlike crystal oscillators or PLL-based monitors, the ring oscillator is:
-- Fully on-chip
-- Digital
-- Low area and low power
-- Highly sensitive to process, voltage, and temperature (PVT) variations
+The oscillator serves as a **self-contained timing element** whose frequency directly reflects:
+- Inverter propagation delay
+- Supply voltage variations
+- Temperature changes
+- Manufacturing process spread
 
----
-
-## 🧩 Problem Statement
-Modern high-speed SoCs operating at **~100 MHz and above** are vulnerable to **timing violations** caused by:
-
-- Temperature rise due to self-heating
-- Supply voltage droop from simultaneous switching
-- Manufacturing process variations
-- Long-term aging effects (NBTI, HCI)
-
-Traditional approaches rely on **worst-case design margins**, which lead to:
-- Excessive power consumption
-- Reduced performance
-- Inefficient silicon utilization
-
-External sensors and PLL-based monitoring solutions increase:
-- Area overhead
-- Power consumption
-- System complexity
-
-### ❗ Challenge
-Design a **fully digital, on-chip mechanism** capable of **predicting timing failure in real time** and dynamically adapting system behavior **before failure occurs**.
+Due to its fully digital nature, the ring oscillator is well suited for **on-chip timing analysis, monitoring, and characterization** in modern CMOS technologies.
 
 ---
 
-## 🛠️ Proposed Solution
-A **100 MHz CMOS ring oscillator** is placed close to **critical timing paths** in the digital core and used as a **local delay monitor**.
+## 🧩 Problem Statement (Broader Context)
+As semiconductor technologies scale, **timing uncertainty** has become a fundamental challenge across a wide range of digital systems.
 
-The oscillation frequency serves as a **direct indicator of gate propagation delay**, which is affected by voltage, temperature, and process variations.
+Key contributors include:
+- Variability in manufacturing processes
+- Fluctuations in supply voltage
+- Temperature gradients across the chip
+- Device aging and long-term degradation
+
+These effects alter **gate propagation delay**, making it difficult to accurately predict timing behavior under real operating conditions.  
+Conventional timing analysis relies heavily on **static worst-case assumptions**, which do not capture real-time or local delay variations.
+
+### ❗ Core Challenge
+Develop a **simple, fully digital timing element** that can accurately reflect **delay variations** caused by physical and environmental factors, without relying on complex analog circuitry or external components.
+
+---
+
+## 🛠️ Oscillator Design Approach
+A **100 MHz CMOS ring oscillator** is implemented using an odd number of cascaded inverter stages connected in a feedback loop.
+
+The oscillation frequency is determined by the **total propagation delay** of the inverter chain, making the oscillator a direct representation of intrinsic CMOS delay characteristics.
 
 ### Fundamental Relation
-
+<img width="886" height="379" alt="image" src="https://github.com/user-attachments/assets/aa63990b-ff3b-4c24-9cf6-6fce995cf425" />
 
 Where:
-- `N` = number of inverter stages  
-- `t_p` = inverter propagation delay  
+- `n` = number of inverter stages  
+- `T` = propagation delay of a single inverter  
 
-An increase in delay (`t_p`) results in a measurable decrease in oscillator frequency.
+Any increase in inverter delay results in a proportional reduction in oscillation frequency.
 
 ---
 
-## 🧠 System Architecture
+## 🧠 Architecture Overview
 
 ### Block Diagram
-![System Block Diagram](<img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/8c28f956-c41f-475f-a264-e82b538c84ab" />
-)
+<img width="661" height="611" alt="image" src="https://github.com/user-attachments/assets/5fbfd758-1114-49b0-8770-acfd89eb89c0" />
 
-**Main Components:**
-- 100 MHz CMOS Ring Oscillator
-- High-speed frequency counter
-- Threshold comparator
-- Control FSM
-- DVFS controller
+#### Inside the R2 block, multiple cascaded CMOS inverters form the delay line whose cumulative delay produces oscillation at approximately 100 MHz.
+
+<img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/8c28f956-c41f-475f-a264-e82b538c84ab" />
+
+**Key Elements:**
+- Cascaded CMOS inverter stages  
+- Feedback connection to enforce oscillation  
+- Output buffering for observation and measurement  
 
 ---
 
 ## 🔄 Operating Principle
-1. The ring oscillator runs at a **nominal frequency of 100 MHz** under safe conditions.
-2. A digital counter measures the oscillator frequency over a fixed time window.
-3. The measured frequency is compared against calibrated thresholds.
-4. If frequency degradation is detected:
-   - System clock frequency is reduced, **or**
-   - Supply voltage is increased, **or**
-   - Non-critical blocks are throttled
-5. Normal operation resumes once safe margins are restored.
+1. An odd number of inverters creates a phase inversion around the loop.
+2. Propagation delay through the inverter chain introduces a finite loop delay.
+3. Continuous inversion and delay result in sustained oscillation.
+4. The output frequency stabilizes near **100 MHz** based on total delay.
 
 ---
 
-## 🎯 Why 100 MHz Ring Oscillator?
-| Feature | Advantage |
-|------|----------|
-| High operating frequency | Matches critical path timing |
-| Fast response | Detects transient voltage droop |
-| Fully digital | Easy CMOS integration |
-| Local placement | Spatial thermal awareness |
-| No external components | Reduced BOM cost |
-
-Lower-frequency oscillators cannot detect **fast delay variations** accurately.
+## 🎯 Why a 100 MHz Ring Oscillator?
+| Aspect | Reason |
+|-----|------|
+| Moderate high frequency | Suitable for delay-sensitive analysis |
+| Digital-only design | No analog biasing or tuning |
+| Compact layout | Minimal area overhead |
+| Technology-sensitive | Accurately reflects PVT variations |
+| Easy integration | Compatible with standard CMOS flows |
 
 ---
 
-## ⚠️ Engineering Challenges
-This design introduces several non-trivial challenges:
+## ⚠️ Design Considerations
+Key challenges addressed in the oscillator design include:
+- Frequency variation due to process corners
+- Sensitivity to supply noise
+- Output jitter caused by delay mismatch
+- Load-dependent frequency shifts
 
-- Process variation causing frequency spread
-- Noise-induced jitter at high frequency
-- Metastability during frequency sampling
-- Distinguishing aging effects from temperature effects
-- Avoiding false triggers during activity bursts
-
-### Mitigation Techniques
-- Multiple ring oscillators with averaging
-- Windowed frequency measurement
-- Startup self-calibration
-- Guard-banded adaptive thresholds
-
----
-
-## 📊 Expected Results
-- Early detection of timing failure
-- Reduction in worst-case timing margins
-- **10–25% dynamic power savings**
-- Improved reliability and silicon lifetime
-- Fully autonomous on-chip monitoring
+Mitigation strategies involve:
+- Careful inverter sizing
+- Output buffering
+- Consistent layout practices
+- Controlled loading conditions
 
 ---
 
 ## 🧪 Simulation & Verification
-![Ring Oscillator Waveform](images/ring_oscillator_waveform.png)
+### Output Waveform
 
-- CMOS inverter-level simulations
-- PVT corner analysis
-- Frequency vs temperature characterization
-- Voltage droop sensitivity testing
+<img width="1755" height="835" alt="Screenshot from 2025-10-27 09-13-36" src="https://github.com/user-attachments/assets/56fe3caf-953c-486f-bf4f-acfad9a46b75" />
+
+### Power Analysis
+<img width="212" height="41" alt="Screenshot from 2025-12-29 19-06-05" src="https://github.com/user-attachments/assets/b6abd4ce-1a59-47be-93e5-cb56c846527d" />
+
+
+
+Verification includes:
+- Transient simulation for oscillation startup
+- Frequency measurement under nominal conditions
+- PVT corner simulations
+- Delay-to-frequency characterization
 
 ---
 
 ## 🏁 Conclusion
-This project demonstrates how a **100 MHz CMOS ring oscillator** can be repurposed from a simple clock generator into a **high-speed timing health monitor**, enabling adaptive and energy-efficient SoC operation without external sensors or analog complexity.
+This work demonstrates a **100 MHz CMOS ring oscillator** as a robust and compact timing element for **delay analysis and characterization**.  
+By directly mapping inverter delay to oscillation frequency, the design provides valuable insight into timing behavior under real operating conditions using a purely digital approach.
 
 ---
 
 ## 📚 Keywords
-CMOS Ring Oscillator, Timing Failure Prediction, DVFS, PVT Monitoring, Low-Power SoC, High-Speed Digital Design
+CMOS Ring Oscillator, Delay Line Oscillator, Timing Characterization, Inverter Delay, PVT Variations, Digital VLSI
 
 ---
 
@@ -148,5 +150,3 @@ CMOS Ring Oscillator, Timing Failure Prediction, DVFS, PVT Monitoring, Low-Power
 
 ## 📄 License
 This project is intended for academic and educational use.
-
-

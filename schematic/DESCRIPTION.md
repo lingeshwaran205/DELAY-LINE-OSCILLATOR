@@ -1,26 +1,57 @@
-Ring Oscillator Schematic – Problem Description
-Problem Statement
+Ring Oscillator Schematic – Description
 
-Modern VLSI systems require compact and low-power clock sources for on-chip timing, testing, and process characterization. Ring oscillators are widely used for these purposes due to their simple structure and ease of integration. However, achieving a target oscillation frequency with minimal deviation is challenging because the frequency is highly sensitive to inverter delay, supply voltage, transistor sizing, and process variations.
+Problem Statement:
 
-The objective of this project is to design a CMOS ring oscillator targeting 100 MHz, while ensuring the generated output frequency remains close to the desired value. In this implementation, the oscillator produces an output frequency of approximately 99 MHz, demonstrating a small and acceptable deviation caused by practical circuit non-idealities.
+1.Modern VLSI systems require compact and low-power on-chip clock sources for timing and characterization.
 
-Design Description
+2.Ring oscillators are commonly used due to their simple CMOS implementation and ease of integration.
 
-The ring oscillator is constructed using an odd number of CMOS inverter stages connected in a closed feedback loop. The oscillation frequency is determined by the cumulative propagation delay of the inverter chain. Transistor dimensions and supply voltage are carefully selected to control the delay per stage and achieve the required frequency range.
+3.Achieving an exact target frequency (100 MHz) is challenging because oscillation frequency depends on inverter delay, supply voltage, and process variations.
 
-Circuit-level schematic design and transient simulations are performed to verify oscillation startup, frequency stability, and waveform integrity. The observed frequency deviation from 100 MHz to 99 MHz highlights the impact of realistic delay variations, making the design suitable for timing analysis and calibration studies.
+4.This project aims to design a CMOS ring oscillator targeting 100 MHz, with the implemented schematic producing ~99 MHz, demonstrating realistic design deviation.
 
-Application Relevance
+Design Overview:
 
-1.This schematic-level implementation is applicable to:
+1.CMOS ring oscillator implemented using an odd number of inverter stages.
 
-2.On-chip clock generation
+2.Inverters are connected in a closed feedback loop to sustain oscillation.
 
-3.Delay and timing characterization
+3.Oscillation frequency is governed by cumulative propagation delay of the inverter chain.
 
-4.Process, Voltage, and Temperature (PVT) monitoring
+4.Transistor sizing and supply voltage are selected to achieve the desired frequency range.
 
-5.PLL calibration and test circuits
+Simulation and Validation:
 
-The design provides a practical reference for understanding frequency control and variation in CMOS-based timing circuits.
+1.Circuit-level schematic designed and simulated using an EDA tool.
+
+2.Transient analysis performed to verify oscillation startup and stability.
+
+3.Output frequency measured from simulated waveforms.
+
+4.Achieved oscillation frequency ≈ 99 MHz against a target of 100 MHz.
+
+Observations:
+
+1.Minor frequency deviation is observed due to practical delay and non-ideal effects.
+
+2.Frequency decreases with increased inverter delay and loading.
+
+3.The design demonstrates stable oscillation suitable for timing analysis.
+
+Applications:
+
+1.On-chip clock generation
+
+2.Delay and timing characterization
+
+3.Process, Voltage, and Temperature (PVT) monitoring
+
+4.PLL calibration and VLSI test circuits
+
+Conclusion:
+
+1.The schematic successfully demonstrates a CMOS ring oscillator operating close to the target frequency.
+
+2.The 99 MHz output validates the design approach under realistic conditions.
+
+3.The design serves as a practical reference for frequency-critical VLSI timing applications.

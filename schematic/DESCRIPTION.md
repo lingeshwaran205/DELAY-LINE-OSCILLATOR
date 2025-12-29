@@ -13,14 +13,14 @@ Circuit-level schematic design and transient simulations are performed to verify
 
 Application Relevance
 
-This schematic-level implementation is applicable to:
+1.This schematic-level implementation is applicable to:
 
-On-chip clock generation
+2.On-chip clock generation
 
-Delay and timing characterization
+3.Delay and timing characterization
 
-Process, Voltage, and Temperature (PVT) monitoring
+4.Process, Voltage, and Temperature (PVT) monitoring
 
-PLL calibration and test circuits
+5.PLL calibration and test circuits
 
 The design provides a practical reference for understanding frequency control and variation in CMOS-based timing circuits.

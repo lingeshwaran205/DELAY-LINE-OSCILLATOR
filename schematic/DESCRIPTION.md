@@ -1,57 +1,24 @@
-**Ring Oscillator Schematic – Description**
+100 MHz CMOS Ring Oscillator for Adaptive Timing Failure Prediction
+📌 Overview
 
-**Problem Statement:**
+This repository presents the design and application of a 100 MHz CMOS ring oscillator used as an on-chip delay sensor for real-time timing failure prediction in high-speed System-on-Chip (SoC) designs. The oscillator operates as a fully digital, low-power structure whose frequency variation directly reflects changes in process, voltage, temperature, and aging conditions, making it suitable for adaptive timing control.
 
-1.Modern VLSI systems require compact and low-power on-chip clock sources for timing and characterization.
+📌 Problem Context
 
-2.Ring oscillators are commonly used due to their simple CMOS implementation and ease of integration.
+Modern SoCs operating at high frequencies are increasingly vulnerable to timing violations caused by voltage droop, temperature rise, manufacturing variability, and long-term transistor aging. Conventional worst-case design margins improve reliability but significantly degrade power efficiency and performance. Existing monitoring solutions based on PLLs or external sensors introduce additional area, power overhead, and system complexity, limiting their scalability.
 
-3.Achieving an exact target frequency (100 MHz) is challenging because oscillation frequency depends on inverter delay, supply voltage, and process variations.
+📌 Proposed Approach
 
-4.This project aims to design a CMOS ring oscillator targeting 100 MHz, with the implemented schematic producing ~99 MHz, demonstrating realistic design deviation.
+The proposed solution employs a 100 MHz CMOS ring oscillator placed near critical timing paths to act as a local delay monitor. Since the oscillation frequency is governed by cumulative inverter delay, any degradation in circuit speed manifests as a measurable frequency shift. This allows the system to predict timing failure early and initiate adaptive voltage or frequency scaling (DVFS) before functional errors occur.
 
-**Design Overview:**
+📌 Engineering Considerations
 
-1.CMOS ring oscillator implemented using an odd number of inverter stages.
+Practical implementation of ring-oscillator-based monitoring must address frequency spread due to process variation, jitter under noisy supply conditions, and reliable frequency sampling. These challenges are mitigated through averaging across multiple oscillators, window-based frequency measurement, startup calibration, and adaptive thresholding to avoid false triggering during transient activity.
 
-2.Inverters are connected in a closed feedback loop to sustain oscillation.
+📌 Applications
 
-3.Oscillation frequency is governed by cumulative propagation delay of the inverter chain.
+This design is applicable to adaptive voltage and frequency scaling, on-chip reliability monitoring, PVT and aging analysis, and low-overhead timing characterization in modern VLSI systems.
 
-4.Transistor sizing and supply voltage are selected to achieve the desired frequency range.
+📌 Conclusion
 
-**Simulation and Validation:**
-
-1.Circuit-level schematic designed and simulated using an EDA tool.
-
-2.Transient analysis performed to verify oscillation startup and stability.
-
-3.Output frequency measured from simulated waveforms.
-
-4.Achieved oscillation frequency ≈ 99 MHz against a target of 100 MHz.
-
-**Observations:**
-
-1.Minor frequency deviation is observed due to practical delay and non-ideal effects.
-
-2.Frequency decreases with increased inverter delay and loading.
-
-3.The design demonstrates stable oscillation suitable for timing analysis.
-
-**Applications:**
-
-1.On-chip clock generation
-
-2.Delay and timing characterization
-
-3.Process, Voltage, and Temperature (PVT) monitoring
-
-4.PLL calibration and VLSI test circuits
-
-**Conclusion:**
-
-1.The schematic successfully demonstrates a CMOS ring oscillator operating close to the target frequency.
-
-2.The 99 MHz output validates the design approach under realistic conditions.
-
-3.The design serves as a practical reference for frequency-critical VLSI timing applications.
+The project demonstrates a scalable and efficient timing-aware design methodology using a 100 MHz CMOS ring oscillator. By leveraging intrinsic delay sensitivity, the approach enables energy-efficient and reliable operation in advanced SoCs without relying on complex external monitoring circuitry.

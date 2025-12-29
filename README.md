@@ -58,7 +58,8 @@ An increase in delay (`t_p`) results in a measurable decrease in oscillator freq
 ## 🧠 System Architecture
 
 ### Block Diagram
-![System Block Diagram]()
+![System Block Diagram](<img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/8c28f956-c41f-475f-a264-e82b538c84ab" />
+)
 
 **Main Components:**
 - 100 MHz CMOS Ring Oscillator

@@ -156,6 +156,8 @@ CMOS Ring Oscillator, Delay Line Oscillator, Timing Characterization, Inverter D
 
 [Lingeshwaran S](https://www.linkedin.com/in/lingeshwaran205)
 
+## Under the guidance:
+
 [Dr.Elango S](https://www.linkedin.com/in/elango-sekar-8973b958)
 
 

@@ -152,10 +152,16 @@ CMOS Ring Oscillator, Delay Line Oscillator, Timing Characterization, Inverter D
 ---
 
 ## 👤 Author
-**Naveen J**
+[Naveen J](https://www.linkedin.com/in/naveenjeyakumar)
+
+[Lingeshwaran S](https://www.linkedin.com/in/lingeshwaran205)
+
+
 
 
 ---
 
 ## 📄 License
-This project is intended for academic and educational use.
+
+This project, including the **100 MHz CMOS ring oscillator design, simulations, and documentation**, is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
+

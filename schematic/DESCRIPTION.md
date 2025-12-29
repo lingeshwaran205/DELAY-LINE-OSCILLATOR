@@ -1,4 +1,4 @@
-//Ring Oscillator Schematic – Problem Description
+Ring Oscillator Schematic – Problem Description
 Problem Statement
 
 Modern VLSI systems require compact and low-power clock sources for on-chip timing, testing, and process characterization. Ring oscillators are widely used for these purposes due to their simple structure and ease of integration. However, achieving a target oscillation frequency with minimal deviation is challenging because the frequency is highly sensitive to inverter delay, supply voltage, transistor sizing, and process variations.
@@ -23,4 +23,4 @@ Process, Voltage, and Temperature (PVT) monitoring
 
 PLL calibration and test circuits
 
-The design provides a practical reference for understanding frequency control and variation in CMOS-based timing circuits.//
+The design provides a practical reference for understanding frequency control and variation in CMOS-based timing circuits.

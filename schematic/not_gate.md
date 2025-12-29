@@ -9,10 +9,10 @@ The CMOS inverter consists of a PMOS transistor connected to the supply voltage 
 
 📌 Pin Configuration
 
-📌 VDD – Positive supply voltage for the PMOS transistor <br>
-<br>📌 GND – Ground reference for the NMOS transistor  
-📌 IN – Input logic signal applied to both PMOS and NMOS gates
-📌 OUT – Inverted output logic signal
+📌 VDD – Positive supply voltage for the PMOS transistor  
+📌 GND – Ground reference for the NMOS transistor  
+📌 IN – Input logic signal applied to both PMOS and NMOS gates  
+📌 OUT – Inverted output logic signal  
 
 📌 Functional Operation
 

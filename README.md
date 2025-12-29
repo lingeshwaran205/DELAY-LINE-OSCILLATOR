@@ -147,7 +147,7 @@ CMOS Ring Oscillator, Delay Line Oscillator, Timing Characterization, Inverter D
 - **EDA Tool:** Cadence Virtuoso
 - **Design Level:** Transistor-level (CMOS)
 - **Circuit Type:** Delay-line based ring oscillator
-- **Technology:** CMOS (PDK-based)
+- **Technology:** CMOS (GPDK180-based)
 
 ---
 

@@ -3,15 +3,15 @@
 
 This repository contains the design, simulation, and layout of a CMOS ring oscillator and inverter chain. The project demonstrates low-power, high-frequency design using PMOS and NMOS transistors, including:
 
-Single CMOS inverters (NOT gates)
+* Single CMOS inverters (NOT gates)
 
-Integrated 243-stage inverter chain
+* Integrated 243-stage inverter chain
 
-Ring oscillator operation for timing and frequency analysis
+* Ring oscillator operation for timing and frequency analysis
 
-Pre- and post-layout simulation studies
+* Pre- and post-layout simulation studies
 
-The design is targeted for VLSI timing characterization, on-chip clock generation, and energy-efficient digital applications.
+* The design is targeted for VLSI timing characterization, on-chip clock generation, and energy-efficient digital applications.
 
 ## 📌 Schematic & Symbol
 
@@ -73,12 +73,12 @@ Confirms readiness for integration and further testing
 
 This project demonstrates a complete CMOS ring oscillator design workflow:
 
-Schematic-level design (single inverters & 243-stage chain)
+* Schematic-level design (single inverters & 243-stage chain)
 
-Symbol abstraction for hierarchical integration
+* Symbol abstraction for hierarchical integration
 
-Cadence Virtuoso layout with DRC/LVS compliance
+* Cadence Virtuoso layout with DRC/LVS compliance
 
-Pre- and post-layout simulations showing frequency and power optimization
+* Pre- and post-layout simulations showing frequency and power optimization
 
-Comparative analysis confirming design readiness for high-speed, low-power VLSI applications
+* Comparative analysis confirming design readiness for high-speed, low-power VLSI applications

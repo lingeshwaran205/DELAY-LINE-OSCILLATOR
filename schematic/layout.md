@@ -24,12 +24,15 @@ Ring oscillator and delay chain implementation
 
 Timing characterization under PVT variations
 
-Educational and experimental VLSI layout studies
-
-## 📌 Conclusion
-This Cadence Virtuoso layout demonstrates a practical, fabrication-ready CMOS design. It enables designers to verify schematic-to-layout correspondence, analyze timing behavior, and use the integrated layout in higher-level designs or simulations.<br>
+Educational and experimental VLSI layout studies <br>
 
 <br><img width="860" height="709" alt="Screenshot from 2025-10-25 15-15-52" src="https://github.com/user-attachments/assets/20767a69-a864-42de-aac9-cf6af6d6c525" /><br>
 
+<br><img width="860" height="709" alt="Screenshot from 2025-10-25 15-14-24" src="https://github.com/user-attachments/assets/b56d104e-88ab-4b5a-9a25-4dacf199e113" /><br>
 
-<br><img width="860" height="709" alt="Screenshot from 2025-10-25 15-14-24" src="https://github.com/user-attachments/assets/b56d104e-88ab-4b5a-9a25-4dacf199e113" />
+
+## <br> 📌 Conclusion
+This Cadence Virtuoso layout demonstrates a practical, fabrication-ready CMOS design. It enables designers to verify schematic-to-layout correspondence, analyze timing behavior, and use the integrated layout in higher-level designs or simulations.<br>
+
+
+

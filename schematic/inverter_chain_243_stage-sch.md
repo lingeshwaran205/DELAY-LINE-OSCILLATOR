@@ -12,7 +12,9 @@ An input transition propagates sequentially through all 243 inverter stages, wit
 ## 📌 Design Intent
 This integrated inverter array is designed to magnify small delay variations caused by process, voltage, temperature, and aging effects, making them observable at the system level. The large number of stages improves sensitivity and measurement resolution in timing-critical applications.
 
-## 📌 Conclusion
+<br><img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/d277fe90-625c-47fc-9463-c6fbe9bca5d5" /> <br>
+
+<br>## 📌 Conclusion
 The 243-stage CMOS inverter chain provides a scalable and reusable timing block for advanced VLSI designs. By integrating a large number of inverter stages into a single schematic, the design enables accurate delay characterization and robust timing analysis under realistic operating conditions.<br>
 
-<br><img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/d277fe90-625c-47fc-9463-c6fbe9bca5d5" />
+

@@ -64,30 +64,6 @@ Any increase in inverter delay results in a proportional reduction in oscillatio
 
 ---
 
-## 🧠 Architecture Overview
-
-### Block Diagram
-<img width="661" height="611" alt="image" src="https://github.com/user-attachments/assets/5fbfd758-1114-49b0-8770-acfd89eb89c0" />
-
-#### Inside the R2 block, multiple cascaded CMOS inverters form the delay line whose cumulative delay produces oscillation at approximately 100 MHz.
-
-<img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/8c28f956-c41f-475f-a264-e82b538c84ab" />
-
-**Key Elements:**
-- Cascaded CMOS inverter stages  
-- Feedback connection to enforce oscillation  
-- Output buffering for observation and measurement  
-
----
-
-## 🔄 Operating Principle
-1. An odd number of inverters creates a phase inversion around the loop.
-2. Propagation delay through the inverter chain introduces a finite loop delay.
-3. Continuous inversion and delay result in sustained oscillation.
-4. The output frequency stabilizes near **100 MHz** based on total delay.
-
----
-
 ## 🎯 Why a 100 MHz Ring Oscillator?
 | Aspect | Reason |
 |-----|------|
@@ -114,21 +90,92 @@ Mitigation strategies involve:
 
 ---
 
-## 🧪 Simulation & Verification
-### Output Waveform
+## 🧩 Cadence-Based EDA Design Flow
 
-<img width="1755" height="835" alt="Screenshot from 2025-10-27 09-13-36" src="https://github.com/user-attachments/assets/56fe3caf-953c-486f-bf4f-acfad9a46b75" />
+The design and validation of the **100 MHz CMOS ring oscillator** were carried out using a structured **end-to-end CMOS EDA workflow** in **Cadence Virtuoso**, following standard VLSI design practices from schematic entry to post-layout verification.
 
-### Power Analysis
-<img width="212" height="41" alt="Screenshot from 2025-12-29 19-06-05" src="https://github.com/user-attachments/assets/b6abd4ce-1a59-47be-93e5-cb56c846527d" />
+This flow ensures functional correctness, physical validity, and manufacturability of the oscillator design.
+
+---
+
+### 1️⃣ Pre-Design Specification
+- Target oscillation frequency: **100 MHz**
+- Selection of inverter-based ring oscillator topology
+- An odd number of inverters creates a phase inversion around the loop.
+- Propagation delay through the inverter chain introduces a finite loop delay.
+- Continuous inversion and delay result in sustained oscillation.
+- The output frequency stabilizes near **100 MHz** based on total delay.
+
+---
+
+### 2️⃣ Schematic Design
+
+<img width="1920" height="1080" alt="Screenshot from 2025-12-29 15-10-05" src="https://github.com/user-attachments/assets/747bad09-d399-4bfa-ad42-a8f32061b61a" />
+
+<img width="1920" height="1080" alt="Screenshot from 2025-12-29 15-10-29 (1)" src="https://github.com/user-attachments/assets/0440949f-a3f6-4484-ab4b-bd892ac8bdc1" />
+
+<img width="1625" height="516" alt="1000038193" src="https://github.com/user-attachments/assets/8c28f956-c41f-475f-a264-e82b538c84ab" />
 
 
 
-Verification includes:
-- Transient simulation for oscillation startup
-- Frequency measurement under nominal conditions
-- PVT corner simulations
-- Delay-to-frequency characterization
+- Transistor-level CMOS inverter schematic creation in **Cadence Virtuoso**
+- Cascading of inverter stages with feedback to enable oscillation
+- Output buffering for signal integrity and measurement isolation
+- Hierarchical organization for clarity and scalability
+
+---
+
+### 3️⃣ Pre-Layout Simulation
+- Transient simulations to verify oscillation startup
+- Frequency extraction under nominal conditions
+- Functional validation of delay-to-frequency relationship
+- Early identification of instability or non-oscillation issues
+
+---
+
+### 4️⃣ Layout Design
+- Custom layout of inverter stages using CMOS design rules
+- Consistent device orientation to reduce systematic mismatch
+- Symmetric routing to maintain uniform delay
+- Compact placement to minimize parasitic imbalance
+
+---
+
+### 5️⃣ Design Rule Check (DRC)
+- Verification of layout compliance with foundry design rules
+- Resolution of spacing, width, and enclosure violations
+- Ensuring layout manufacturability
+
+---
+
+### 6️⃣ Layout Versus Schematic (LVS)
+- Electrical equivalence check between schematic and layout
+- Verification of transistor connectivity, sizing, and hierarchy
+- Confirmation of correct oscillator topology implementation
+
+---
+
+### 7️⃣ Parasitic Extraction (PEX)
+- Extraction of layout-induced parasitic resistances and capacitances
+- Generation of post-layout netlist
+- Analysis of parasitic impact on inverter delay
+
+---
+
+### 8️⃣ Post-Layout Simulation
+- Verification of oscillation with extracted parasitics
+- Comparison of pre-layout and post-layout oscillation frequency
+- Validation of stable operation near **100 MHz**
+- Delay sensitivity analysis under voltage and temperature variations
+
+---
+
+### 9️⃣ Design Closure
+- Clean DRC and LVS reports
+- Verified post-layout functionality
+- Documented simulation and waveform results
+- Design ready for integration or academic sign-off
+
 
 ---
 

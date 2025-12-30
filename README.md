@@ -146,12 +146,12 @@ This flow ensures functional correctness, physical validity, and manufacturabili
 <table>
   <tr>
     <td>
-      <img width="320" height="320"
+      <img width="320" height="380"
       src="https://github.com/user-attachments/assets/3565b4be-9066-43c4-9137-ab6c7936596c">
     </td>
     <td style="width:40px"></td>
     <td>
-      <img width="320" height="400"
+      <img width="320" height="380"
       src="https://github.com/user-attachments/assets/160ecbaa-a93a-471d-9ca7-459c46c26f0d">
     </td>
   </tr>

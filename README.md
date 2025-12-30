@@ -145,17 +145,24 @@ This flow ensures functional correctness, physical validity, and manufacturabili
 
 <table>
   <tr>
-    <td>
+    <td align="center">
       <img width="320" height="380"
-      src="https://github.com/user-attachments/assets/3565b4be-9066-43c4-9137-ab6c7936596c">
+      src="https://github.com/user-attachments/assets/3565b4be-9066-43c4-9137-ab6c7936596c"><br>
+      <b>Pre-Simulation</b>
     </td>
-    <td style="width:40px"></td>
-    <td>
+
+  <td width="40"></td>
+
+   <td align="center">
       <img width="320" height="380"
-      src="https://github.com/user-attachments/assets/160ecbaa-a93a-471d-9ca7-459c46c26f0d">
+      src="https://github.com/user-attachments/assets/160ecbaa-a93a-471d-9ca7-459c46c26f0d"><br>
+      <b>Post-Simulation</b>
     </td>
   </tr>
 </table>
+
+
+
 
 
 - Custom layout of inverter stages using CMOS design rules

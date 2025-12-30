@@ -165,21 +165,46 @@ This flow ensures functional correctness, physical validity, and manufacturabili
 
 ---
 
-### 5️⃣ Design Rule Check (DRC)
+### 5️⃣ Design Rule Check (DRC)<br>
+
+<br><img width="1920" height="1080" alt="Screenshot from 2025-12-30 17-31-55" src="https://github.com/user-attachments/assets/fd3bd8e1-865b-49b5-a66f-493ffcfc3de5" />
+
 - Verification of layout compliance with foundry design rules
 - Resolution of spacing, width, and enclosure violations
 - Ensuring layout manufacturability
 
 ---
 
-### 6️⃣ Layout Versus Schematic (LVS)
+### 6️⃣ Layout Versus Schematic (LVS)<br>
+
+<br><img width="1920" height="1080" alt="Screenshot from 2025-12-30 17-32-40" src="https://github.com/user-attachments/assets/ac1cc436-47bc-4992-a0a3-88833bbc2abd" />
+
 - Electrical equivalence check between schematic and layout
 - Verification of transistor connectivity, sizing, and hierarchy
 - Confirmation of correct oscillator topology implementation
 
 ---
 
-### 7️⃣ Parasitic Extraction (PEX)
+### 7️⃣ Parasitic Extraction (PEX)<br>
+
+<table>
+  <tr>
+    <td align="center">
+      <img width="850" alt="Screenshot 1"
+      src="https://github.com/user-attachments/assets/cff84a0c-2b39-40e4-8aa4-961e79e6dc59">
+    </td>
+
+   <td width="60"></td> <!-- spacing -->
+
+   <td align="center">
+      <img width="850" alt="Screenshot 2"
+      src="https://github.com/user-attachments/assets/8affec7c-b6c8-465a-b7b7-f183d70680c8">
+    </td>
+  </tr>
+</table>
+
+
+
 - Extraction of layout-induced parasitic resistances and capacitances
 - Generation of post-layout netlist
 - Analysis of parasitic impact on inverter delay

@@ -125,7 +125,15 @@ This flow ensures functional correctness, physical validity, and manufacturabili
 
 ---
 
-### 3️⃣ Pre-Layout Simulation
+### 3️⃣ Pre-Layout Simulation and it's analysis <br>
+
+<br><img width="1920" height="1080" alt="Screenshot from 2025-12-29 15-03-08" src="https://github.com/user-attachments/assets/d0882d72-a658-487f-9f44-5846f8e22483" /><br>
+
+<br><img width="212" height="42" alt="Screenshot from 2025-12-30 15-39-27" src="https://github.com/user-attachments/assets/996fb99f-363a-485d-82fd-51c0f181fde9" /><br>
+
+<br><img width="209" height="40" alt="Screenshot from 2025-12-30 13-39-12" src="https://github.com/user-attachments/assets/759d42f1-be57-4dc9-add6-ca971a3b37bc" /><br>
+
+
 - Transient simulations to verify oscillation startup
 - Frequency extraction under nominal conditions
 - Functional validation of delay-to-frequency relationship
@@ -133,7 +141,23 @@ This flow ensures functional correctness, physical validity, and manufacturabili
 
 ---
 
-### 4️⃣ Layout Design
+### 4️⃣ Layout Design<br>
+
+<table>
+  <tr>
+    <td>
+      <img width="320" height="320"
+      src="https://github.com/user-attachments/assets/3565b4be-9066-43c4-9137-ab6c7936596c">
+    </td>
+    <td style="width:40px"></td>
+    <td>
+      <img width="320" height="400"
+      src="https://github.com/user-attachments/assets/160ecbaa-a93a-471d-9ca7-459c46c26f0d">
+    </td>
+  </tr>
+</table>
+
+
 - Custom layout of inverter stages using CMOS design rules
 - Consistent device orientation to reduce systematic mismatch
 - Symmetric routing to maintain uniform delay
@@ -162,7 +186,16 @@ This flow ensures functional correctness, physical validity, and manufacturabili
 
 ---
 
-### 8️⃣ Post-Layout Simulation
+### 8️⃣ Post-Layout Simulation and it's analysis <br>
+
+<br><img width="1755" height="835" alt="Screenshot from 2025-10-27 09-13-36" src="https://github.com/user-attachments/assets/02cff8f8-bc0a-4709-880e-bdb5de5f7496" /><br>
+
+<br><img width="212" height="39" alt="Screenshot from 2025-12-30 14-07-43" src="https://github.com/user-attachments/assets/912f2b25-b7d5-44ee-a297-8644da0cf793" /><br>
+
+<br><img width="214" height="39" alt="Screenshot from 2025-12-30 14-06-54" src="https://github.com/user-attachments/assets/3a7c9d60-1239-4351-be3f-d202b7d89e65" /><br>
+
+
+
 - Verification of oscillation with extracted parasitics
 - Comparison of pre-layout and post-layout oscillation frequency
 - Validation of stable operation near **100 MHz**

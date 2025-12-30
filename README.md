@@ -8,7 +8,7 @@ Validated through circuit-level simulations for accurate frequency and delay ana
 
 ## 100 MHz CMOS Ring Oscillator for Delay Characterization
 
-<img width="689" height="643" alt="Screenshot from 2025-10-25 15-14-24" src="https://github.com/user-attachments/assets/de873b73-7cac-4330-88a9-0d74948b4d24" />  <br>
+<img width="860" height="709" alt="Screenshot from 2025-10-25 15-14-24" src="https://github.com/user-attachments/assets/de873b73-7cac-4330-88a9-0d74948b4d24" />  <br>
 
 </br> 
 
